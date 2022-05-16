@@ -12,10 +12,6 @@ def action(board):
     #return valid
 
     action_list = [i for i, e in enumerate(board) if e > 0 and i < 6]
-    for i, e in enumerate(board):
-        if e == 0 and i < 6:
-            print(i, action_list)
-
     return action_list
 
 
@@ -116,12 +112,20 @@ def min_max(board):
 def main():
     #check all functions
     #steal and place
+    print("check steal and place")
     steal_board = [1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0]
     print(steal_board)
     print(place(steal_board, 0))
 
 
-    #
+    #action list
+    first_board = [0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0]
+    print("check action")
+    print(first_board)
+    print(action(first_board))
+    first_board = [0, 2, 1, 5, 6, 1, 0, 1, 1, 1, 0, 1, 1, 0]
+    print(first_board)
+    print(action(first_board))
 
 if __name__ == "__main__":
     main()
